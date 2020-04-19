@@ -18,15 +18,13 @@ int reverse(int x) {
 
 // uses reverse command
 int reverse(int x) {
-    int reverse(int x) {
-        string s = to_string(x);
-        if (s[0] == '-')
-            ::reverse(s.begin() + 1, s.end());
-        else
-            ::reverse(s.begin(), s.end());
-        long rev = stol(s);
-        if (rev < INT_MIN || rev > INT_MAX)
-            return 0;
-        return rev;
-    }
+    string s = to_string(x);
+    if (s[0] == '-')
+        ::reverse(s.begin() + 1, s.end());
+    else
+        ::reverse(s.begin(), s.end());
+    long rev = stol(s);
+    if (rev < INT_MIN || rev > INT_MAX)
+        return 0;
+    return rev;
 }
