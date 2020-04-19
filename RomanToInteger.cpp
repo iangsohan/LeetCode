@@ -5,20 +5,19 @@
 #include<unordered_map>
 using namespace std;
 
+
 int romanToInt(string s) {
-    int romanToInt(string s) {
-        int ans = 0;
-        int tmp = 0;
-        unordered_map<char, int> umap = { {'I', 1},{'V', 5}, {'X', 10}, {'L', 50},
-                                         {'C', 100}, {'D', 500}, {'M', 1000} };
-        for (int i = 0; i < s.length(); i++) {
-            ans += umap[s[i]];
-            if (tmp < umap[s[i]]) {
-                ans -= tmp * 2;
-                tmp = 0;
-            }
-            tmp = umap[s[i]];
+    int ans = 0;
+    int tmp = 0;
+    unordered_map<char, int> umap = { {'I', 1},{'V', 5}, {'X', 10}, {'L', 50},
+                                        {'C', 100}, {'D', 500}, {'M', 1000} };
+    for (int i = 0; i < s.length(); i++) {
+        ans += umap[s[i]];
+        if (tmp < umap[s[i]]) {
+            ans -= tmp * 2;
+            tmp = 0;
         }
-        return ans;
+        tmp = umap[s[i]];
     }
+    return ans;
 }
