@@ -9,7 +9,7 @@ using namespace std;
 
 // You don't need to do the if else stuff if they return things
 // Sometimes you put else statements to emphasize that the two paths are kinda symmetric.
-// The null check inside the core isn't needed because of the null check.
+// One of the null checks is redundent.
 // Use nullptr when refering to pointers.
 // Your if statement logic on dealing with either being null is ugly
 ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
