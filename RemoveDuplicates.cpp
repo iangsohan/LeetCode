@@ -8,14 +8,13 @@
 using namespace std;
 
 int removeDuplicates(vector<int>& nums) {
-    if (nums.size() < 2) {
-        return nums.size();
-    }
-    for (int i = 0; i < nums.size() - 1; i++) {
-        if (nums[i] == nums[i + 1]) {
-            nums.erase(nums.begin() + i + 1);
-            i--;
+    if (nums.size() == 0) return 0;
+    int count = -1;
+    for (int i = 0; i < nums.size(); i++) {
+        if (nums[i] != val) {
+            count++;
+            nums[count] = nums[i];
         }
     }
-    return nums.size();
+    return count + 1;
 }
