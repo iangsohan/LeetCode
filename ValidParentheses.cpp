@@ -3,46 +3,19 @@
 
 #include<iostream>
 #include<stack>
+#include<unordered_map>
+#include<string>
 using namespace std;
 
 bool isValid(string s) {
-	stack<char> btm, top;
-
-	if (s.length() % 2 != 0)
-		return false;
-	if (s.length() == 0)
-		return true;
-
+	unordered_map<char, char> par{ {'(', ')'}, {'{','}'}, {'[',']'} };
+	stack<char> left;
 	for (int i = 0; i < s.length(); i++) {
-		btm.push(s[i]);
-	}
-
-	top.push(btm.top());
-	btm.pop();
-	while (btm.size() != 0) {
-		while (btm.size() > 0 && top.size() > 0 && top.top() - btm.top() < 3 && top.top() - btm.top() > 0) {
-			top.pop();
-			btm.pop();
-		}
-
-		if (btm.size() > 0) {
-			top.push(btm.top());
-			btm.pop();
+		if (left.size() != 0 && s.at(i) == par[left.top()]) {
+			left.pop();
+		} else {
+			left.push(s.at(i));
 		}
 	}
-
-	if (top.size() == 0) {
-		return true;
-	} else {
-		return false;
-	}
-}
-
-int main() {
-	string x = "([)[]]{}";
-	if (isValid(x)) {
-		cout << "TRUE" << endl;
-	} else {
-		cout << "FALSE" << endl;
-	}
+	return(left.empty());
 }
