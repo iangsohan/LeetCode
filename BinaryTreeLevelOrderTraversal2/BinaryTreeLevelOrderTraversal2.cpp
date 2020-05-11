@@ -1,4 +1,4 @@
-/*  LeetCode - "Binary Tree Level Order Traversal II"
+/*  LeetCode: "Binary Tree Level Order Traversal II"
     - Given a binary tree, return the bottom-up level order traversal of its nodes' values. */
 
 #include<iostream>
