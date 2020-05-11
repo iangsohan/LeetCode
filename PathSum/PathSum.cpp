@@ -1,4 +1,4 @@
-/*  LeetCode - "Path Sum"
+/*  LeetCode: "Path Sum"
     - Given a binary tree and a sum, determine if the tree has a root-to-leaf path with the given sum.  */
 
 #include<iostream>
