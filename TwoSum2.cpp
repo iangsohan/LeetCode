@@ -3,21 +3,15 @@
 
 #include<iostream>
 #include<vector>
-#include<algorithm>
 using namespace std;
 
 vector<int> twoSum(vector<int>& numbers, int target) {
-    vector<int> rev = numbers;
-    reverse(rev.begin(), rev.end());
-    int i = 0, j = 0;
-    while (i != numbers.size()-1 || j != rev.size()) {
-        if (numbers[i] + rev[j] == target) {
-            int num2 = rev.size()-j;
-            vector<int> ans {i+1, num2};
-            return ans;
-        }
-        else if (numbers[i] + rev[j] < target) i++;
-        else j++;
+    int i = 0, j = numbers.size()-1;
+    while (i < j) {
+        if (numbers[i] + numbers[j] == target)
+            return {i+1, j+1};
+        else if (numbers[i] + numbers[j] < target) i++;
+        else j--;
     }
-    return vector<int> {};
+    return {};
 }
