@@ -7,27 +7,12 @@
 #include<unordered_map>
 using namespace std;
 
-
-// unordered_map option
 vector<int> twoSum(vector<int>& nums, int target) {
-    unordered_map<int, int> umap;
+    unordered_map<int,int> sum;
     for (int i = 0; i < nums.size(); i++) {
-        if (umap.find(target - nums[i]) != umap.end()) {
-            return { umap[nums[i]], i };
-        }
-        umap[nums[i]] = i;
-    }
-    return {};
-}
-
-// for loop option
-vector<int> twoSum(vector<int>& nums, int target) {
-    for (int i = 0; i < nums.size() - 1; i++) {
-        for (int j = i + 1; j < nums.size(); j++) {
-            if (nums[i] + nums[j] == target) {
-                return { i, j };
-            }
-        }
+        if (sum.count(target-nums[i]))
+            return {sum[target-nums[i]], i};
+        sum[nums[i]] = i;
     }
     return {};
 }
