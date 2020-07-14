@@ -1,5 +1,5 @@
 /*  LeetCode: "Sudoku Solver"
-    - Write a program to solve a Sudoku puzzle by filling the empty cells.  */
+    - Write a program to solve a 9x9 Sudoku puzzle by filling the empty cells.  */
 
 #include <vector>
 using namespace std;
